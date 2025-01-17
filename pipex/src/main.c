@@ -6,7 +6,7 @@
 /*   By: vgarcia <vgarcia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 08:37:15 by vgarcia           #+#    #+#             */
-/*   Updated: 2025/01/15 12:11:34 by vgarcia          ###   ########.fr       */
+/*   Updated: 2025/01/17 11:30:44 by vgarcia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,6 +69,7 @@ void	program(char **av, char **env)
 		cmd_pipe(av[i], env);
 	setup_outfile(&fd, av, limiter);
 	cmd_outfile(fd.outfile, av[i], env);
+	wait(NULL);
 }
 
 int	main(int ac, char **av, char **env)

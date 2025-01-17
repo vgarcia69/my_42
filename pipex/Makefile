@@ -26,7 +26,6 @@ SRC_BONUS=src_bonus/main_bonus.c\
 	src_bonus/ft_split_quote_bonus.c
 	
 LIBFT=ft_isalpha.c\
-	free_all_str.c\
 	ft_isdigit.c\
 	ft_isalnum.c\
 	ft_isascii.c\

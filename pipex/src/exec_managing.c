@@ -6,7 +6,7 @@
 /*   By: vgarcia <vgarcia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/07 14:29:46 by vgarcia           #+#    #+#             */
-/*   Updated: 2025/01/15 12:25:01 by vgarcia          ###   ########.fr       */
+/*   Updated: 2025/01/17 11:21:07 by vgarcia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	cmd_pipe(char *av, char **env)
 		close(fd_pipe[1]);
 		exec_shell(av, env);
 	}
-	waitpid(pid, NULL, 0);
 	close(fd_pipe[1]);
 	if (dup2(fd_pipe[0], STDIN_FILENO) == -1)
 		return (close(fd_pipe[0]), error(1, "Dup2 failed"));
@@ -61,5 +60,4 @@ void	cmd_outfile(int outfile, char *av, char **env)
 		return (close(outfile), error(1, "Fork"));
 	else if (pid == 0)
 		exec_shell(av, env);
-	waitpid(pid, NULL, 0);
 }

@@ -6,7 +6,7 @@
 /*   By: vgarcia <vgarcia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/12/26 08:37:15 by vgarcia           #+#    #+#             */
-/*   Updated: 2025/01/17 08:33:10 by vgarcia          ###   ########.fr       */
+/*   Updated: 2025/01/17 11:32:42 by vgarcia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ void	program(char **av, char **env)
 	t_fd	fd;
 	char	*limiter;
 	int		i;
-	int		status;
 
 	i = 0;
 	limiter = NULL;
@@ -75,7 +74,7 @@ void	program(char **av, char **env)
 		cmd_pipe(av[i], env);
 	setup_outfile(&fd, av, limiter);
 	cmd_outfile(fd.outfile, av[i], env);
-	wait(&status);
+	wait(NULL);
 }
 
 int	main(int ac, char **av, char **env)
