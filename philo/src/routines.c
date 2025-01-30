@@ -6,7 +6,7 @@
 /*   By: vgarcia <vgarcia@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/20 08:57:59 by vgarcia           #+#    #+#             */
-/*   Updated: 2025/01/30 15:56:16 by vgarcia          ###   ########.fr       */
+/*   Updated: 2025/01/30 15:56:58 by vgarcia          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ int	routines(t_simu *simu)
 	i = -1;
 	if (simu->philo_nbr == 1)
 	{
-		return (sad_fate(&simu->philo[0]));
+		sad_fate(&simu->philo[0]);
 		return (0);
 	}
 	pthread_mutex_lock(&simu->mutex.on_start);
